@@ -1,0 +1,77 @@
+import numpy as np
+a=np.array([6,7,8])
+a[0:2]
+array([6, 7])
+a[-1]
+8
+a=np.array([[1,2,3], [4,5,6], [7,8,9]])
+a
+array([[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]])
+a[2,3]
+Traceback (most recent call last):
+  File "<pyshell#6>", line 1, in <module>
+    a[2,3]
+IndexError: index 3 is out of bounds for axis 1 with size 3
+a[1,2]
+6
+a[0:2,2]
+array([3, 6])
+for row in a:
+    print(row)
+
+    
+[1 2 3]
+[4 5 6]
+[7 8 9]
+for cell in a.flat:
+    print(cell)
+
+    
+1
+2
+3
+4
+5
+6
+7
+8
+9
+a=np.arange(6).reshape(3,2)
+b=np.arange(6,12).reshape(3,2)
+a
+array([[0, 1],
+       [2, 3],
+       [4, 5]])
+b
+array([[ 6,  7],
+       [ 8,  9],
+       [10, 11]])
+#Now to stack both one over other
+np.vstack((a,b))
+array([[ 0,  1],
+       [ 2,  3],
+       [ 4,  5],
+       [ 6,  7],
+       [ 8,  9],
+       [10, 11]])
+np.hstack((a,b))
+array([[ 0,  1,  6,  7],
+       [ 2,  3,  8,  9],
+       [ 4,  5, 10, 11]])
+#hsplit and vsplit
+a=np.arange(12).reshape(3,4)
+a
+array([[ 0,  1,  2,  3],
+       [ 4,  5,  6,  7],
+       [ 8,  9, 10, 11]])
+b=a>4
+b
+array([[False, False, False, False],
+       [False,  True,  True,  True],
+       [ True,  True,  True,  True]])
+a[b]
+array([ 5,  6,  7,  8,  9, 10, 11])
+#Used to extract elements based on a condition
+
