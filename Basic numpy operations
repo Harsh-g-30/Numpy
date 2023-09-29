@@ -8,6 +8,9 @@ a.ndim
 1
 
 
+
+
+
 a=np.array([[1,2], [3,4], [5,6]])
 a.ndim #Tells the dimension
 2
